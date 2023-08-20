@@ -30,8 +30,8 @@ def combinertf(filedir, filename,pagedelimit = True):
         filenames.remove(test)
     except ValueError:
         pass
-    out_file = open(test,'wb')
-    out_file.write("{")
+    out_file = open(test, 'wb')
+    out_file.write(b"{")
 
     for fname in filenames:
 
@@ -42,10 +42,10 @@ def combinertf(filedir, filename,pagedelimit = True):
             mylist[-1] = mylist[-1].strip()[:-1]
             for i in mylist:
                 out_file.write(i)
-            if pagedelimit & (fname != filenames[-1]):
-                out_file.write("\par \page")
+            if page_delimit & (fname != filenames[-1]):
+                out_file.write(b"\par \page")
 
-    out_file.write("} ")
+    out_file.write(b"} ")
     out_file.close()
 
 def main():
